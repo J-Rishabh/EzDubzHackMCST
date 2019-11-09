@@ -30,7 +30,7 @@ def retrieve_input():
     x=1
     linkScan(requests.get("https://www.staples.com/" + var + "/directory_" + var), var)
     x=2
-    linkScan(requests.get(
+    linkScan(requests.get("https://www.apple.com/us/search/" + var), var)
 
 prompt = Label(root,text="Enter the electronic product you need (Case Sensitive)")
 prompt.pack()
