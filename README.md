@@ -5,4 +5,8 @@
 
 #### Made using BeautifulSoup and Tkinter
 
+https://youtu.be/B8tTpSxNbbg
+
+SHORT Video Demo!
+
 Use ezdub.py
