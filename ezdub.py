@@ -8,17 +8,17 @@ staplesstring = "https://www.staples.com"
 def linkScan(result, var):
     soup = BeautifulSoup(result.content, 'lxml')
 
-    links = soup.find_all('a',{"class":keyterms[x]})
+    links = soup.find('a',{"class":keyterms[x]})
     #lowercase = links.lower()
 
-    for link in links:
-        if var in link.text:
-            if x == 0:
-                print(link.attrs['href'])
-            if x == 1:
-                print(staplesstring + link.attrs['href'])
-            
-            print()
+    if var in links.text:
+        if x == 0:
+            print(links.attrs['href'])
+        elif x == 1:
+            print(staplesstring + links.attrs['href'])
+
+        print()
+
 
 var = input("What are you purchasing? (Case Sensitive) ")
 
@@ -45,5 +45,3 @@ x=2
 
 
 #print(result.status_code)
-
-
