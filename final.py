@@ -28,9 +28,13 @@ def retrieve_input():
     print(inputValue)
     waiting = Label(root,text="Searching... This might take a while...")
     waiting.pack()
-    notifyamz=Lavel(root,text="EBay:")
-    notifyamx.pack()
+    notifyeb=Label(root,text="EBay:")
+    notifyeb.pack()
     linkScan(requests.get("https://www.ebay.com/sch/i.html?_nkw=" + var), var)
+    notifyst=Label(root,text="Staples")
+    notifyst.pack()
+    x=1
+    linkScan(requests.get("https://www.staples.com/" + var + "/directory_" + var), var)
 
 prompt = Label(root,text="Enter the electronic product you need (Case Sensitive)")
 prompt.pack()
