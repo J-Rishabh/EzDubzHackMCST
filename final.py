@@ -2,11 +2,10 @@ import tkinter
 from tkinter import *
 import requests
 from bs4 import BeautifulSoup
-keyterms = ["s-item__link","standard-type__product_title"]
+keyterms = ["s-item__link","standard-type__product_title","as-links-name more"]
+websitestring = ["","https://www.staples.com","https://www.apple.com"]
 x=0
 var=""
-printable=""
-staplesstring = "https://www.staples.com"
 root=Tk()
 def linkScan(result, var):
     soup = BeautifulSoup(result.content, 'lxml')
@@ -30,6 +29,8 @@ def retrieve_input():
     notifyst.pack()
     x=1
     linkScan(requests.get("https://www.staples.com/" + var + "/directory_" + var), var)
+    x=2
+    linkScan(requests.get(
 
 prompt = Label(root,text="Enter the electronic product you need (Case Sensitive)")
 prompt.pack()
