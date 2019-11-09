@@ -4,3 +4,5 @@
 #### A pretty crude app that webscrapes for electronic devices! 
 
 #### Made using BeautifulSoup and Tkinter
+
+Use ezdub.py
