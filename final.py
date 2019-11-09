@@ -22,6 +22,7 @@ def linkScan(result, var):
                 printable+=(staplesstring + link.attrs['href'])
                 printable+='\n'
             toShow=Label(root,text=printable)
+            toShow.pack()
 root=Tk()
 def retrieve_input():
     inputValue=textBox.get("1.0","end-1c")
