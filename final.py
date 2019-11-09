@@ -1,13 +1,38 @@
 import tkinter
 from tkinter import *
+import requests
+from bs4 import BeautifulSoup
+keyterms = ["s-item__link","standard-type__product_title"]
+x=0
+var=""
+printable=""
+staplesstring = "https://www.staples.com"
+def linkScan(result, var):
+    soup = BeautifulSoup(result.content, 'lxml')
+
+    links = soup.find_all('a',{"class":keyterms[x]})
+    #lowercase = links.lower()
+
+    for link in links:
+        if var in link.text:
+            if x == 0:
+                printable+=(link.attrs['href'])
+                printable+='\n'
+            if x == 1:
+                printable+=(staplesstring + link.attrs['href'])
+                printable+='\n'
+            toShow=Label(root,text=printable)
 root=Tk()
 def retrieve_input():
     inputValue=textBox.get("1.0","end-1c")
     print(inputValue)
     waiting = Label(root,text="Searching... This might take a while...")
     waiting.pack()
+    notifyamz=Lavel(root,text="EBay:")
+    notifyamx.pack()
+    linkScan(requests.get("https://www.ebay.com/sch/i.html?_nkw=" + var), var)
 
-prompt = Label(root,text="Enter the electronic product you need")
+prompt = Label(root,text="Enter the electronic product you need (Case Sensitive)")
 prompt.pack()
 textBox=Text(root, height=2, width=100)
 textBox.pack()
@@ -16,3 +41,4 @@ buttonCommit=Button(root, height=1, width=10, text="Search",
 buttonCommit.pack()
 
 mainloop()
+
