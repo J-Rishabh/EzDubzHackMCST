@@ -6,6 +6,7 @@ def retrieve_input():
     print(inputValue)
     waiting = Label(root,text="Searching... This might take a while...")
     waiting.pack()
+    #AFTER THIS DO THE WEB SCRAPING PART AND PRINT IT ALL OUT
 
 textBox=Text(root, height=2, width=100)
 textBox.pack()
