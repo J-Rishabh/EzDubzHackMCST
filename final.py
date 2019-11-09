@@ -11,16 +11,13 @@ root=Tk()
 def linkScan(result, var):
     soup = BeautifulSoup(result.content, 'lxml')
 
-    links = soup.find_all('a',{"class":keyterms[x]})
+    links = soup.find('a',{"class":keyterms[x]})
     #lowercase = links.lower()
 
-    for link in links:
-        if var in link.text:
-            if x == 0:
-                toShow=Label(root, link.attrs['href'])
-            if x == 1:
-                toShow=Label(root,staplesstring+attrs['href'])
-
+    if var in links.text:    
+        print(websitestring[x] + links.attrs['href'])
+        toShow=Label(root,websitestring[x]+links.attrs['hrefs'])
+        print()
 def retrieve_input():
     inputValue=textBox.get("1.0","end-1c")
     print(inputValue)
