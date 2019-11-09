@@ -19,7 +19,7 @@ def linkScan(result, var):
     for link in links:
         if var in link.text:
             if x == 0:
-                toShow.insert(END,link.attrs['href']
+                toShow.insert(END,link.attrs['href'])
             if x == 1:
                 toShow.insert(END, (staplesstring+link.attrs['href']))
 
