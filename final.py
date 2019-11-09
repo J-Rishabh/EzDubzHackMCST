@@ -8,8 +8,6 @@ var=""
 printable=""
 staplesstring = "https://www.staples.com"
 root=Tk()
-toShow=Listbox(root)
-toShow.pack()
 def linkScan(result, var):
     soup = BeautifulSoup(result.content, 'lxml')
 
@@ -19,9 +17,9 @@ def linkScan(result, var):
     for link in links:
         if var in link.text:
             if x == 0:
-                toShow.insert(END,link.attrs['href'])
+                toShow=Label(root, link.attrs['href'])
             if x == 1:
-                toShow.insert(END, (staplesstring+link.attrs['href']))
+                toShow=Label(root,staplesstring+attrs['href'])
 
 def retrieve_input():
     inputValue=textBox.get("1.0","end-1c")
