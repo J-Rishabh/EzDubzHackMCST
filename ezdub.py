@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 keyterms = ["s-item__link","standard-type__product_title","as-links-name more"]
-websitestring = ["","https://www.staples.com","https://www.apple.com"]
+websitestring = ["","https://www.staples.com",""]
 x=0
 
 def linkScan(result, var):
